@@ -7,24 +7,29 @@ import { PokemonService } from 'src/app/Services/pokemon.service';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
+  pokemonInfo: any[];
 
-  constructor(private pokService: PokemonService) { }
+  
+  constructor(private pokService: PokemonService) {
+    this.pokemonInfo = [];
+  }
 
   ngOnInit(): void {
+    
     this.getPoke(); 
   }
 
   getPoke(){
-    for(let i = 1; i<200; i++){
-      this.pokService.getPokemons(i).subscribe(
-        res => {
-          console.log(res);
-        },
-        err => {
-          
-        }
-      )
-    }
+
+    this.pokService.getPokemons().subscribe(
+      res => {
+        this.pokemonInfo = res.results;
+        console.log(res.results);
+      },
+      err => {
+        console.log(err)
+      }
+    )
   }
 
 }

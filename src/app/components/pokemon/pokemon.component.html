@@ -1,1 +1,6 @@
-<p>pokemon works!</p>
+<p-card>
+    <ng-template pTemplate="header">
+        <img [alt]="pokemon.name" [src]="pokemon.name.sprites.front_default">
+    </ng-template>
+    {{pokemon.name}}
+</p-card>

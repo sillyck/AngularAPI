@@ -1,1 +1,12 @@
-<mat-card>a</mat-card>
+<!-- <p-table #dt [rows]="10" [rowsPerPageOptions]="[5,10,15,20,25,30]">
+    <ng-template pTemplate="header" let-columns>
+        <tr *ngFor="let pokemon of pokemonInfo">
+            <td>
+                {{pokemon.name}}
+            </td>
+        </tr>
+    </ng-template>
+</p-table> -->
+<div>
+    <app-pokemon *ngFor="let pokemon of pokemonInfo" [pokemon]="pokemon"></app-pokemon>
+</div>
