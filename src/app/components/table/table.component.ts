@@ -10,6 +10,8 @@ export class TableComponent implements OnInit {
   
   pokemonInfo: any[];
   numPokemons = 40;
+  bol = false;
+  pokeData: any;
   
   constructor(private pokService: PokemonService) {
     this.pokemonInfo = [];
@@ -20,25 +22,41 @@ export class TableComponent implements OnInit {
   }
 
   getPoke(){
-    let pokeData;
 
     for (let i = 1; i <= this.numPokemons; i++){
       this.pokService.getPokemons(i).subscribe(
         res => {
-          console.log(res);
-          pokeData = {
+          // console.log(res);
+          this.pokeData = {
             position: res.id,
             name: res.name,
-            image: res.sprites.front_default,
-            imageShiny: res.sprites.front_shiny
+            image: res.sprites.front_default
           }
-          this.pokemonInfo.push(pokeData);
+          this.pokemonInfo.push(this.pokeData);
         },
         error => {
           console.log(error)
         }
       )
     }
+}
+
+  clicky(id){
+    console.log(id)
+    this.pokService.getPokemons(id).subscribe(
+      res => {
+        // console.log(res);
+        this.pokeData = {
+          position: res.id,
+          name: res.name,
+          image: res.sprites.front_shiny
+        }
+        this.pokemonInfo.push(this.pokeData);
+      },
+      error => {
+        console.log(error)
+      }
+    )
   }
 
   bubbleSort(){
