@@ -9,7 +9,7 @@ import { PokemonService } from 'src/app/Services/pokemon.service';
 export class TableComponent implements OnInit {
   
   pokemonInfo: any[];
-  numPokemons = 20;
+  numPokemons = 40;
   
   constructor(private pokService: PokemonService) {
     this.pokemonInfo = [];

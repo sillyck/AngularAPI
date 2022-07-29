@@ -1,11 +1,8 @@
-<div>
-    <div *ngFor="let pokemon of pokemonInfo" [pokemon]="pokemon" style="display:grid; padding-bottom: 20px;">
-        <p-card >
-            <p-card-header>
-                {{pokemon.name}}
-            </p-card-header>
+<div id="area">
+    <div *ngFor="let pokemon of pokemonInfo" [pokemon]="pokemon" style="padding-bottom: 20px; text-align: center; ">
+        <p-card [header]="pokemon.name" [style]="{width: '260px'}">
             <ng-template pTemplate="header">
-                <img [alt]=pokemon.name [src]=pokemon.image style="height: 100px; width: 100px;">
+                <img [alt]=pokemon.name [src]=pokemon.image style="height: 100px; width: 100px; ">
             </ng-template>
         </p-card>
     </div>
