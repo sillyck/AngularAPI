@@ -9,7 +9,6 @@ import { ButtonModule } from 'primeng/button';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BodyComponent } from './components/body/body.component';
-import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { TableComponent } from './components/table/table.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +18,6 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     HeaderComponent,
     BodyComponent,
-    PokemonComponent,
     TableComponent
   ],
   imports: [
