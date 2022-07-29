@@ -1,4 +1,12 @@
 <div>
-    <app-pokemon *ngFor="let pokemon of pokemonInfo" [pokemon]="pokemon"></app-pokemon>
+    <div *ngFor="let pokemon of pokemonInfo" [pokemon]="pokemon" style="display:grid; padding-bottom: 20px;">
+        <p-card >
+            <p-card-header>
+                {{pokemon.name}}
+            </p-card-header>
+            <ng-template pTemplate="header">
+                <img [alt]=pokemon.name [src]=pokemon.image style="height: 100px; width: 100px;">
+            </ng-template>
+        </p-card>
+    </div>
 </div>
-

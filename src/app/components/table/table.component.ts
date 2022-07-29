@@ -41,4 +41,20 @@ export class TableComponent implements OnInit {
     }
   }
 
+  bubbleSort(){
+    var i, j;
+    for (i = 0; i < this.numPokemons-1; i++){
+        for (j = 0; j < this.numPokemons-i-1; j++){
+            if (this.pokemonInfo[j].position > this.pokemonInfo[j+1].position){
+              this.swap(this.pokemonInfo,j,j+1);
+            }
+        }
+    }
+  }
+
+  swap(arr: any[], x: number, y: number){
+    var temp = arr[x];
+    arr[x] = arr[y];
+    arr[y] = temp;
+  }
 }
