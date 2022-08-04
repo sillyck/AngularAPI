@@ -22,7 +22,6 @@ export class TableComponent implements OnInit {
   }
 
   getPoke(){
-
     for (let i = 1; i <= this.numPokemons; i++){
       this.pokService.getPokemons(i).subscribe(
         res => {
@@ -30,7 +29,8 @@ export class TableComponent implements OnInit {
           this.pokeData = {
             position: res.id,
             name: res.name,
-            image: res.sprites.front_default
+            image: res.sprites.front_default,
+            type1: res.types[0].type.name
           }
           this.pokemonInfo.push(this.pokeData);
         },
@@ -39,24 +39,22 @@ export class TableComponent implements OnInit {
         }
       )
     }
-}
+  }
 
-  clicky(id){
-    console.log(id)
-    this.pokService.getPokemons(id).subscribe(
-      res => {
-        // console.log(res);
-        this.pokeData = {
-          position: res.id,
-          name: res.name,
-          image: res.sprites.front_shiny
-        }
-        this.pokemonInfo.push(this.pokeData);
-      },
-      error => {
-        console.log(error)
-      }
-    )
+  shiny(id){
+    console.log("Shiny!")
+    // this.pokService.getPokemons(id).subscribe(
+    //   res => {
+    //     this.pokemonInfo.map(function(valor){
+    //       this.pokeData = {
+    //         image: res.sprites.front_shiny
+    //       }
+    //     })
+    //     this.pokemonInfo.push(this.pokeData);
+    //   },error => {
+    //     console.log(error)
+    //   }
+    // )
   }
 
   bubbleSort(){

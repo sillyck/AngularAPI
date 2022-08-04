@@ -1,13 +1,18 @@
 <div class="area">
     <div *ngFor="let pokemon of pokemonInfo" [pokemon]="pokemon" style="padding-bottom: 20px; text-align: center; ">
-        <p-card [header]="pokemon.name" [style]="{width: '260px'}">
-            <ng-template pTemplate="header">
-                <img [alt]=pokemon.name [src]=pokemon.image style="height: 100px; width: 100px; ">
-            </ng-template>
-            <label class="switch">
-                <input type="checkbox" (click)="clicky(pokemon.position)">
-                <span class="slider round"></span>
-            </label>
+        <p-card>
+            <p-card-header>
+                <img [alt]=pokemon.name [src]=pokemon.image style="height: 125px; width: 125px; ">
+            </p-card-header>
+            <p-card-subheader>
+                <h4 class="pokeName">{{pokemon.name}}</h4>
+            </p-card-subheader>
+            <p-card-content>
+                <li class="type1">{{pokemon.type1}}</li>
+            </p-card-content>
+            <p-card-footer>
+                #{{pokemon.position}}
+            </p-card-footer>
         </p-card>
     </div>
 </div>

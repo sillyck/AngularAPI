@@ -4,60 +4,16 @@
     grid-template-rows: repeat(5, 1fr);
 }
 
-/* The switch - the box around the slider */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+.pokeName::first-letter{
+    text-transform: uppercase;
 }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+.type1::first-letter{
+    text-transform: uppercase;
 }
 
-input:checked + .slider {
-    background-color: #dbdf20;
-}
-
-input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
+img{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;utf8, %3Csvg width=%22100%25%22 height=%22100%25%22 viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22 %3E %3Cdefs%3E %3CclipPath id=%22shape%22%3E %3Cpath fill=%22currentColor%22 d=%22M839%2C614Q814%2C728%2C731.5%2C844Q649%2C960%2C511%2C925Q373%2C890%2C266.5%2C818.5Q160%2C747%2C114%2C623.5Q68%2C500%2C138%2C394Q208%2C288%2C281%2C169Q354%2C50%2C502.5%2C43Q651%2C36%2C747%2C143.5Q843%2C251%2C853.5%2C375.5Q864%2C500%2C839%2C614Z%22%3E%3C%2Fpath%3E %3C%2FclipPath%3E %3C%2Fdefs%3E %3Cg clip-path=%22url(%23shape)%22%3E %3Cpath fill=%22%232EB9CC%22 d=%22M839%2C614Q814%2C728%2C731.5%2C844Q649%2C960%2C511%2C925Q373%2C890%2C266.5%2C818.5Q160%2C747%2C114%2C623.5Q68%2C500%2C138%2C394Q208%2C288%2C281%2C169Q354%2C50%2C502.5%2C43Q651%2C36%2C747%2C143.5Q843%2C251%2C853.5%2C375.5Q864%2C500%2C839%2C614Z%22 %2F%3E %3C%2Fg%3E %3C%2Fsvg%3E");
 }
